@@ -40,7 +40,7 @@ def train(args, pt_dir, chkpt_path, trainloader, valloader, writer, logger, hp, 
                         mel_fmin=hp.audio.mel_fmin,
                         mel_fmax=hp.audio.mel_fmax)
 
-    githash = get_commit_hash()
+    # githash = get_commit_hash()
 
     init_epoch = -1
     step = 0
@@ -59,9 +59,9 @@ def train(args, pt_dir, chkpt_path, trainloader, valloader, writer, logger, hp, 
         if hp_str != checkpoint['hp_str']:
             logger.warning("New hparams is different from checkpoint. Will use new.")
 
-        if githash != checkpoint['githash']:
-            logger.warning("Code might be different: git hash is different.")
-            logger.warning("%s -> %s" % (checkpoint['githash'], githash))
+        # if githash != checkpoint['githash']:
+        #     logger.warning("Code might be different: git hash is different.")
+        #     logger.warning("%s -> %s" % (checkpoint['githash'], githash))
 
     else:
         logger.info("Starting new training run.")
@@ -203,8 +203,8 @@ def train(args, pt_dir, chkpt_path, trainloader, valloader, writer, logger, hp, 
                                                                      sum(avg_adv_loss) / len(avg_adv_loss),
                                                                      step))
             if epoch % hp.log.save_interval == 0:
-                save_path = os.path.join(pt_dir, '%s_%s_%04d.pt'
-                                         % (args.name, githash, epoch))
+                save_path = os.path.join(pt_dir, '%s_%04d.pt'
+                                         % (args.name, epoch))
                 torch.save({
                     'model_g': model_g.state_dict(),
                     'model_d': model_d.state_dict(),
@@ -213,8 +213,7 @@ def train(args, pt_dir, chkpt_path, trainloader, valloader, writer, logger, hp, 
                     'optim_d': optim_d.state_dict(),
                     'step': step,
                     'epoch': epoch,
-                    'hp_str': hp_str,
-                    'githash': githash,
+                    'hp_str': hp_str
                 }, save_path)
                 logger.info("Saved checkpoint to: %s" % save_path)
 
