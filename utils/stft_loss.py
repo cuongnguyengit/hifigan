@@ -78,6 +78,7 @@ class STFTLoss(torch.nn.Module):
         self.log_stft_magnitude_loss = LogSTFTMagnitudeLoss()
 
     def forward(self, x, y):
+        print('STFT f:', type(x), type(y))
         """Calculate forward propagation.
         Args:
             x (Tensor): Predicted signal (B, T).

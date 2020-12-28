@@ -22,7 +22,7 @@ def validate(hp, generator, discriminator, model_d_mpd, valloader, stft_loss, l1
         adv_loss =0.0
         loss_d_real = 0.0
         loss_d_fake = 0.0
-        sc_loss, mag_loss = stft_loss(fake_audio[:, :, :audio.size(2)].squeeze(1).cuda(), audio.squeeze(1).cuda())
+        sc_loss, mag_loss = stft_loss(fake_audio[:, :, :audio.size(2)].squeeze(1), audio.squeeze(1))
         loss_g = sc_loss + mag_loss
 
         # Mel Loss
