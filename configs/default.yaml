@@ -1,7 +1,7 @@
 data: # root path of train/validation data (either relative/absoulte path is ok)
-  train: 'H:\Deepsync\backup\deepsync\LJSpeech-1.1\wavs'
+  train: '/content/LJSpeech-1.1/wavs'
   validation: 'H:\Deepsync\backup\deepsync\LJSpeech-1.1\valid'
-  mel_path: 'H:\Deepsync\backup\fastspeech\data\mels'
+  mel_path: '/content/LJSpeech-1.1/mels'
   eval_path: ''
 ---
 train:
@@ -57,5 +57,5 @@ log:
   summary_interval: 1
   validation_interval: 5
   save_interval: 20
-  chkpt_dir: 'chkpt'
-  log_dir: 'logs'
+  chkpt_dir: '/content/drive/MyDrive/voice_data/HiFiGAN/chkpt'
+  log_dir: '/content/drive/MyDrive/voice_data/HiFiGAN/logs'
