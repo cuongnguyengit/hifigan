@@ -73,9 +73,9 @@ def train(args, pt_dir, chkpt_path, trainloader, valloader, writer, logger, hp, 
     try:
         model_g.train()
         model_d.train()
-        stft_loss = MultiResolutionSTFTLoss()
+        stft_loss = MultiResolutionSTFTLoss().cuda()
         criterion = torch.nn.MSELoss().cuda()
-        l1loss = torch.nn.L1Loss()
+        l1loss = torch.nn.L1Loss().cuda()
 
 
         for epoch in itertools.count(init_epoch + 1):
