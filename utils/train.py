@@ -38,7 +38,7 @@ def train(args, pt_dir, chkpt_path, trainloader, valloader, writer, logger, hp, 
                         n_mel_channels=hp.audio.n_mel_channels,
                         sampling_rate=hp.audio.sampling_rate,
                         mel_fmin=hp.audio.mel_fmin,
-                        mel_fmax=hp.audio.mel_fmax).cuda()
+                        mel_fmax=hp.audio.mel_fmax)
 
     # githash = get_commit_hash()
 
@@ -73,9 +73,9 @@ def train(args, pt_dir, chkpt_path, trainloader, valloader, writer, logger, hp, 
     try:
         model_g.train()
         model_d.train()
-        stft_loss = MultiResolutionSTFTLoss().cuda()
+        stft_loss = MultiResolutionSTFTLoss()
         criterion = torch.nn.MSELoss().cuda()
-        l1loss = torch.nn.L1Loss().cuda()
+        l1loss = torch.nn.L1Loss()
 
 
         for epoch in itertools.count(init_epoch + 1):
