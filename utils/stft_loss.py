@@ -79,8 +79,8 @@ class STFTLoss(torch.nn.Module):
 
     def forward(self, x, y):
         # print('STFT f:', type(x), type(y))
-        x = x.cuda()
-        y = y.cuda()
+        # x = x.cuda()
+        # y = y.cuda()
         """Calculate forward propagation.
         Args:
             x (Tensor): Predicted signal (B, T).
