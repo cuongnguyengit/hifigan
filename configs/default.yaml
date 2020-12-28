@@ -1,6 +1,6 @@
 data: # root path of train/validation data (either relative/absoulte path is ok)
   train: '/content/LJSpeech-1.1/wavs'
-  validation: 'H:\Deepsync\backup\deepsync\LJSpeech-1.1\valid'
+  validation: '/content/LJSpeech-1.1/val'
   mel_path: '/content/LJSpeech-1.1/mels'
   eval_path: ''
 ---
