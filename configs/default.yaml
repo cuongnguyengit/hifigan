@@ -1,7 +1,7 @@
 data: # root path of train/validation data (either relative/absoulte path is ok)
-  train: '/content/LJSpeech-1.1/wavs'
-  validation: '/content/LJSpeech-1.1/val'
-  mel_path: '/content/LJSpeech-1.1/mels'
+  train: '/content/vlsp2020/wavs'
+  validation: '/content/vlsp2020/val'
+  mel_path: '/content/vlsp2020/mels'
   eval_path: ''
 ---
 train:
@@ -57,5 +57,5 @@ log:
   summary_interval: 1
   validation_interval: 5
   save_interval: 20
-  chkpt_dir: '/content/drive/MyDrive/voice_data/HiFiGAN/chkpt'
+  chkpt_dir: '/content/drive/MyDrive/voice_data/HiFiGAN/ckpt'
   log_dir: '/content/drive/MyDrive/voice_data/HiFiGAN/logs'
